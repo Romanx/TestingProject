@@ -20,7 +20,7 @@ public class Triangle {
     public static TriangleType TriangleTypeBySides(Triangle T) {
 
         // The sum of any two sides must exceed the length of the third side otherwise it's not a triangle.
-        if(T.a >= T.b + T.c || T.b >= T.a + T.c || T.c >= T.b + T.c) return TriangleType.NOT_A_TRIANGLE;
+        if(T.a >= T.b + T.c || T.b >= T.a + T.c || T.c >= T.a + T.b) return TriangleType.NOT_A_TRIANGLE;
 
         //Impossible triangle.
         if(T.a <= 0 || T.b <= 0 || T.c <= 0) return TriangleType.NOT_A_TRIANGLE;
