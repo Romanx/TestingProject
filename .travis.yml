@@ -10,4 +10,5 @@ env:
   global:
     secure: Tnk+cYMUcaXkD1ixLPTYrDiNXYHKkLdsH4t4mQ2Hxs76ui+hoe91VQNl1u+BO8X+5dCf4us255GP56bFYSdmJ/VsRqa+4+eiK7WQbGDE9nSPW+K0Ffsgnl2P1A1eIunrww5CHMAXJszI6LYIqWiOFBlHXb3gVI9oCeGsYpzHscA=
 after_success:
+- - chmod -R 777 ./.utility/push-javadoc-to-gh-pages.sh
 - .utility/push-javadoc-to-gh-pages.sh
