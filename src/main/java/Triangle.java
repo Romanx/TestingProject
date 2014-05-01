@@ -27,7 +27,7 @@ public class Triangle {
         if(T.a > MAX_SIZE || T.b > MAX_SIZE || T.c > MAX_SIZE) return TriangleType.NOT_A_TRIANGLE;
 
         if(T.a == T.b & T.a == T.c && T.b == T.c) return TriangleType.EQUALATERAL;
-
-        return null;
+        if(T.a == T.b || T.b == T.c || T.c == T.a) return  TriangleType.ISOSCELES;
+        return TriangleType.SCALENE;
     }
 }
