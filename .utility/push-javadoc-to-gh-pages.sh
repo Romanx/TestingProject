@@ -4,7 +4,7 @@ if [ "$TRAVIS_REPO_SLUG" == "Romanx/TestingProject" ] && [ "$TRAVIS_JDK_VERSION"
 
   echo -e "Publishing javadoc...\n"
 
-  cp -R build/Romanx/TestingProject/target/site/apidocs $HOME/javadoc-latest
+  cp -R $TRAVIS_BUILD_DIR/Romanx/TestingProject/target/site/apidocs $HOME/javadoc-latest
 
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
