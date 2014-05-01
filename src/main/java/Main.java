@@ -6,6 +6,10 @@ public class Main {
         Triangle T = new Triangle(1, 1, 1);
 
         System.out.println(Triangle.TriangleTypeBySides(T));
+
+        System.out.println(isGreaterThan(1, 2));
+        System.out.println(isGreaterThan(1, 1));
+        System.out.println(isGreaterThan(2, 1));
     }
 
     /**
