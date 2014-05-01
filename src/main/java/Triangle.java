@@ -26,6 +26,8 @@ public class Triangle {
         if(T.a <= 0 || T.b <= 0 || T.c <= 0) return TriangleType.NOT_A_TRIANGLE;
         if(T.a > MAX_SIZE || T.b > MAX_SIZE || T.c > MAX_SIZE) return TriangleType.NOT_A_TRIANGLE;
 
+        if(T.a == T.b & T.a == T.c && T.b == T.c) return TriangleType.EQUALATERAL;
+
         return null;
     }
 }
