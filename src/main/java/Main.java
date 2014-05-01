@@ -3,6 +3,6 @@
  */
 public class Main {
     public static void main(String args[]) {
-        
+        Triangle T = new Triangle(1, 1, 1);
     }
 }
