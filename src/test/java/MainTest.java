@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -10,7 +11,9 @@ public class MainTest {
 
     @Test
     public void greaterThanTest() {
-
+        Assert.assertEquals(Main.isGreaterThan(1, 2), -1);
+        Assert.assertEquals(Main.isGreaterThan(2, 1), 1);
+        Assert.assertEquals(Main.isGreaterThan(1, 1), 0);
     }
 
 }
