@@ -14,6 +14,10 @@ public class MainTest {
         Assert.assertEquals(Main.isGreaterThan(1, 2), -1);
         Assert.assertEquals(Main.isGreaterThan(2, 1), 1);
         Assert.assertEquals(Main.isGreaterThan(1, 1), 0);
+
+        Assert.assertEquals(Main.isGreaterThan(200000, 2), 1);
+        Assert.assertEquals(Main.isGreaterThan(-1, 1), -1);
+        Assert.assertEquals(Main.isGreaterThan(600, 600), 0);
     }
 
 }
