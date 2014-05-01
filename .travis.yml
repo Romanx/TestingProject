@@ -1,9 +1,13 @@
 language: java
 jdk:
-  - oraclejdk7
-  - openjdk7
-  - openjdk6
-# whitelist
+- oraclejdk7
+- openjdk7
+- openjdk6
 branches:
   only:
-    - master
+  - master
+env:
+  global:
+    secure: Tnk+cYMUcaXkD1ixLPTYrDiNXYHKkLdsH4t4mQ2Hxs76ui+hoe91VQNl1u+BO8X+5dCf4us255GP56bFYSdmJ/VsRqa+4+eiK7WQbGDE9nSPW+K0Ffsgnl2P1A1eIunrww5CHMAXJszI6LYIqWiOFBlHXb3gVI9oCeGsYpzHscA=
+after_success:
+- .utility/push-javadoc-to-gh-pages.sh
