@@ -27,4 +27,26 @@ public class PublisherTest {
 
         p.sendMessage(message);
     }
+
+    @Test
+    public void mutlipleSubscribersRecieveSingleMessage() {
+        final ISubscriber subscriberA = context.mock(ISubscriber.class);
+        final ISubscriber subscriberB = context.mock(ISubscriber.class, "SubscriberB");
+        final ISubscriber subscriberC = context.mock(ISubscriber.class, "SubscriberC");
+
+        Publisher p = new Publisher();
+        p.addSubscriber(subscriberA);
+        p.addSubscriber(subscriberB);
+        p.addSubscriber(subscriberC);
+
+        final String message = "Hello World";
+
+        context.checking(new Expectations() {{
+            allowing (subscriberA).recieveMessage(message);
+            allowing (subscriberB).recieveMessage(message);
+            allowing (subscriberC).recieveMessage(message);
+        }});
+
+        p.sendMessage(message);
+    }
 }
