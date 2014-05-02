@@ -42,9 +42,9 @@ public class PublisherTest {
         final String message = "Hello World";
 
         context.checking(new Expectations() {{
-            allowing (subscriberA).recieveMessage(message);
-            allowing (subscriberB).recieveMessage(message);
-            allowing (subscriberC).recieveMessage(message);
+            oneOf (subscriberA).recieveMessage(message);
+            oneOf (subscriberB).recieveMessage(message);
+            oneOf (subscriberC).recieveMessage(message);
         }});
 
         p.sendMessage(message);
@@ -70,5 +70,46 @@ public class PublisherTest {
         p.sendMessage(messageA);
         p.sendMessage(messageB);
         p.sendMessage(messageC);
+    }
+
+    @Test
+    public void multipleSubscribersMultipleMessages() {
+        final ISubscriber subscriberA = context.mock(ISubscriber.class);
+        final ISubscriber subscriberB = context.mock(ISubscriber.class, "SubscriberB");
+        final ISubscriber subscriberC = context.mock(ISubscriber.class, "SubscriberC");
+
+        Publisher p = new Publisher();
+        p.addSubscriber(subscriberA);
+        p.addSubscriber(subscriberB);
+        p.addSubscriber(subscriberC);
+
+        final String message = "Hello World";
+        final String messageA = "MessageA";
+        final String messageB = "MessageB";
+        final String messageC = "MessageC";
+
+        context.checking(new Expectations() {{
+            allowing (subscriberA).recieveMessage(message);
+            allowing (subscriberA).recieveMessage(messageA);
+            allowing (subscriberA).recieveMessage(messageB);
+            allowing (subscriberA).recieveMessage(messageC);
+            allowing (subscriberB).recieveMessage(message);
+            allowing (subscriberB).recieveMessage(messageA);
+            allowing (subscriberB).recieveMessage(messageB);
+            allowing (subscriberB).recieveMessage(messageC);
+            allowing (subscriberC).recieveMessage(message);
+            allowing (subscriberC).recieveMessage(messageA);
+            allowing (subscriberC).recieveMessage(messageB);
+            allowing (subscriberC).recieveMessage(messageC);
+        }});
+
+        p.sendMessage(message);
+        p.sendMessage(messageA);
+        p.sendMessage(messageC);
+        p.sendMessage(messageB);
+        p.sendMessage(message);
+        p.sendMessage(messageA);
+        p.sendMessage(messageB);
+        p.sendMessage(messageB);
     }
 }
