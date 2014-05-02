@@ -49,4 +49,26 @@ public class PublisherTest {
 
         p.sendMessage(message);
     }
+
+    @Test
+    public void oneSubscriberMultipleMessages() {
+        final ISubscriber subscriber = context.mock(ISubscriber.class);
+
+        Publisher p = new Publisher();
+        p.addSubscriber(subscriber);
+
+        final String messageA = "MessageA";
+        final String messageB = "MessageB";
+        final String messageC = "MessageC";
+
+        context.checking(new Expectations() {{
+            oneOf (subscriber).recieveMessage(messageA);
+            oneOf (subscriber).recieveMessage(messageB);
+            oneOf (subscriber).recieveMessage(messageC);
+        }});
+
+        p.sendMessage(messageA);
+        p.sendMessage(messageB);
+        p.sendMessage(messageC);
+    }
 }
