@@ -27,4 +27,13 @@ public class Main {
         return 0;
     }
 
+    /**
+     * Finds the mean value of the given integer array.
+     * @param values integer array.
+     * @return the mean value of the array as a float.
+     */
+    public static float findMean(int[] values) {
+        return 0f;
+    }
+
 }
