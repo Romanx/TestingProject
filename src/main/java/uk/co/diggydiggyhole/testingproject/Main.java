@@ -6,9 +6,9 @@ package uk.co.diggydiggyhole.testingproject;
 
 public class Main {
     public static void main(String args[]) {
-        Triangle T = new Triangle(1, 1, 1);
+        Triangle t = new Triangle(1, 1, 1);
 
-        System.out.println(Triangle.triangleTypeBySides(T));
+        System.out.println(Triangle.triangleTypeBySides(t));
 
         System.out.println(isGreaterThan(1, 2));
         System.out.println(isGreaterThan(1, 1));
