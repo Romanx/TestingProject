@@ -21,4 +21,13 @@ public class MainTest {
         Assert.assertEquals(Main.isGreaterThan(600, 600), 0);
     }
 
+    @Test
+    public void findMeanTest() {
+        Assert.assertEquals(Main.findMean(new int[] {}), 0f, 0f);
+        Assert.assertEquals(Main.findMean(new int[] {5}), 5.0f, 0f);
+        Assert.assertEquals(Main.findMean(new int[] {1, 2, 3, 4, 5 }), 3.0f, 0.01f);
+        Assert.assertEquals(Main.findMean(new int[] {100, 3, 30, 92, 76 }), 60.2f, 0.01f);
+        Assert.assertEquals(Main.findMean(new int[] {-1, 123, 99 }), 73.66f, 0.01f);
+    }
+
 }
