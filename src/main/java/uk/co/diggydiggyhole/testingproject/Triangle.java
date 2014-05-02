@@ -16,20 +16,20 @@ public class Triangle {
     /**
      * Takes a triangle and returns the type of triangle by the sides.
      * Min Side Length: > 0 | Max Side Length: > 200
-     * @param T triangle to evaluate
+     * @param triangle triangle to evaluate
      * @return the type of triangle.
      */
-    public static TriangleType triangleTypeBySides(Triangle T) {
+    public static TriangleType triangleTypeBySides(Triangle triangle) {
 
         // The sum of any two sides must exceed the length of the third side otherwise it's not a triangle.
-        if(T.a >= T.b + T.c || T.b >= T.a + T.c || T.c >= T.a + T.b) return TriangleType.NOT_A_TRIANGLE;
+        if(triangle.a >= triangle.b + triangle.c || triangle.b >= triangle.a + triangle.c || triangle.c >= triangle.a + triangle.b) return TriangleType.NOT_A_TRIANGLE;
 
         //Impossible triangle.
-        if(T.a <= 0 || T.b <= 0 || T.c <= 0) return TriangleType.NOT_A_TRIANGLE;
-        if(T.a > MAX_SIZE || T.b > MAX_SIZE || T.c > MAX_SIZE) return TriangleType.NOT_A_TRIANGLE;
+        if(triangle.a <= 0 || triangle.b <= 0 || triangle.c <= 0) return TriangleType.NOT_A_TRIANGLE;
+        if(triangle.a > MAX_SIZE || triangle.b > MAX_SIZE || triangle.c > MAX_SIZE) return TriangleType.NOT_A_TRIANGLE;
 
-        if(T.a == T.b & T.a == T.c && T.b == T.c) return TriangleType.EQUALATERAL;
-        if(T.a == T.b || T.b == T.c || T.c == T.a) return  TriangleType.ISOSCELES;
+        if(triangle.a == triangle.b & triangle.a == triangle.c && triangle.b == triangle.c) return TriangleType.EQUALATERAL;
+        if(triangle.a == triangle.b || triangle.b == triangle.c || triangle.c == triangle.a) return  TriangleType.ISOSCELES;
         return TriangleType.SCALENE;
     }
 }
