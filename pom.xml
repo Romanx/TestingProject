@@ -27,6 +27,13 @@
             <artifactId>rhq-sonarqube-plugin</artifactId>
             <version>4.10.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.java.quickcheck</groupId>
+            <artifactId>quickcheck</artifactId>
+            <version>0.6</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
