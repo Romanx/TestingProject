@@ -36,7 +36,12 @@ public class Main {
         if(values.length == 0) return 0f;
         float total = 0;
 
-        return total;
+        for(int i = 0; i < values.length; i++)
+        {
+            total += values[i];
+        }
+
+        return total / (float)values.length;
     }
 
 }
