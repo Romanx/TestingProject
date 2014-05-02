@@ -22,14 +22,24 @@ public class Triangle {
     public static TriangleType triangleTypeBySides(Triangle triangle) {
 
         // The sum of any two sides must exceed the length of the third side otherwise it's not a triangle.
-        if(triangle.a >= triangle.b + triangle.c || triangle.b >= triangle.a + triangle.c || triangle.c >= triangle.a + triangle.b) return TriangleType.NOT_A_TRIANGLE;
+        if(triangle.a >= triangle.b + triangle.c || triangle.b >= triangle.a + triangle.c || triangle.c >= triangle.a + triangle.b) {
+            return TriangleType.NOT_A_TRIANGLE;
+        }
 
         //Impossible triangle.
-        if(triangle.a <= 0 || triangle.b <= 0 || triangle.c <= 0) return TriangleType.NOT_A_TRIANGLE;
-        if(triangle.a > MAX_SIZE || triangle.b > MAX_SIZE || triangle.c > MAX_SIZE) return TriangleType.NOT_A_TRIANGLE;
+        if(triangle.a <= 0 || triangle.b <= 0 || triangle.c <= 0) {
+            return TriangleType.NOT_A_TRIANGLE;
+        }
+        if(triangle.a > MAX_SIZE || triangle.b > MAX_SIZE || triangle.c > MAX_SIZE) {
+            return TriangleType.NOT_A_TRIANGLE;
+        }
 
-        if(triangle.a == triangle.b & triangle.a == triangle.c && triangle.b == triangle.c) return TriangleType.EQUALATERAL;
-        if(triangle.a == triangle.b || triangle.b == triangle.c || triangle.c == triangle.a) return  TriangleType.ISOSCELES;
+        if(triangle.a == triangle.b & triangle.a == triangle.c && triangle.b == triangle.c) {
+            return TriangleType.EQUALATERAL;
+        }
+        if(triangle.a == triangle.b || triangle.b == triangle.c || triangle.c == triangle.a) {
+            return  TriangleType.ISOSCELES;
+        }
         return TriangleType.SCALENE;
     }
 }
