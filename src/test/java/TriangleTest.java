@@ -2,6 +2,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import uk.co.diggydiggyhole.testingproject.Triangle;
+import uk.co.diggydiggyhole.testingproject.TriangleType;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -761,7 +763,7 @@ public class TriangleTest {
 
     @Test
     public void testTriangleType() {
-        Assert.assertEquals(Triangle.TriangleTypeBySides(this.triangle), this.expectedType);
+        Assert.assertEquals(Triangle.triangleTypeBySides(this.triangle), this.expectedType);
     }
 
 }
