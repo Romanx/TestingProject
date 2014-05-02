@@ -33,7 +33,10 @@ public class Main {
      * @return the mean value of the array as a float.
      */
     public static float findMean(int[] values) {
-        return 0f;
+        if(values.length == 0) return 0f;
+        float total = 0;
+
+        return total;
     }
 
 }
