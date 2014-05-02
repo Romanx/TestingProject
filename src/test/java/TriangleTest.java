@@ -2,6 +2,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import uk.co.diggydiggyhole.testingproject.Triangle;
+import uk.co.diggydiggyhole.testingproject.TriangleType;
 
 import java.util.Arrays;
 import java.util.Collection;

@@ -1,6 +1,9 @@
 /**
  * Created by Alex on 01/05/2014.
  */
+
+package uk.co.diggydiggyhole.testingproject;
+
 public class Main {
     public static void main(String args[]) {
         Triangle T = new Triangle(1, 1, 1);

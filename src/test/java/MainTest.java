@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import uk.co.diggydiggyhole.testingproject.Main;
 
 /**
  * Created by Alex on 01/05/2014.
