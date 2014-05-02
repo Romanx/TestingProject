@@ -4,6 +4,9 @@
 
 package uk.co.diggydiggyhole.testingproject;
 
+import uk.co.diggydiggyhole.testingproject.integration.ConsoleSubscriber;
+import uk.co.diggydiggyhole.testingproject.integration.Publisher;
+
 public class Main {
     public static void main(String args[]) {
         Triangle t = new Triangle(1, 1, 1);
@@ -13,6 +16,13 @@ public class Main {
         System.out.println(isGreaterThan(1, 2));
         System.out.println(isGreaterThan(1, 1));
         System.out.println(isGreaterThan(2, 1));
+
+        Publisher p = new Publisher();
+        p.addSubscriber(new ConsoleSubscriber("Subscriber 1"));
+        p.addSubscriber(new ConsoleSubscriber("Subscriber 2"));
+        p.sendMessage("Ping!");
+        p.addSubscriber(new ConsoleSubscriber("Subscriber 3"));
+        p.sendMessage("Pong!");
     }
 
     /**
