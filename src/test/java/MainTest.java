@@ -21,4 +21,9 @@ public class MainTest {
         Assert.assertEquals(Main.isGreaterThan(600, 600), 0);
     }
 
+    @Test
+    public void findMeanTest() {
+        
+    }
+
 }
