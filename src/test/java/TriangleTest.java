@@ -763,7 +763,7 @@ public class TriangleTest {
 
     @Test
     public void testTriangleType() {
-        Assert.assertEquals(Triangle.TriangleTypeBySides(this.triangle), this.expectedType);
+        Assert.assertEquals(Triangle.triangleTypeBySides(this.triangle), this.expectedType);
     }
 
 }

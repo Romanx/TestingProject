@@ -19,7 +19,7 @@ public class Triangle {
      * @param T triangle to evaluate
      * @return the type of triangle.
      */
-    public static TriangleType TriangleTypeBySides(Triangle T) {
+    public static TriangleType triangleTypeBySides(Triangle T) {
 
         // The sum of any two sides must exceed the length of the third side otherwise it's not a triangle.
         if(T.a >= T.b + T.c || T.b >= T.a + T.c || T.c >= T.a + T.b) return TriangleType.NOT_A_TRIANGLE;
