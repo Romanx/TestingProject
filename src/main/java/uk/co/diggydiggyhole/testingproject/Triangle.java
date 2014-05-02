@@ -28,10 +28,10 @@ public class Triangle {
 
         //Impossible triangle.
         if(triangle.a <= 0 || triangle.b <= 0 || triangle.c <= 0) {
-            return TriangleType.NOT_A_TRIANGLE;
+            return TriangleType.IMPOSSIBLE;
         }
         if(triangle.a > MAX_SIZE || triangle.b > MAX_SIZE || triangle.c > MAX_SIZE) {
-            return TriangleType.NOT_A_TRIANGLE;
+            return TriangleType.IMPOSSIBLE;
         }
 
         if(triangle.a == triangle.b & triangle.a == triangle.c && triangle.b == triangle.c) {

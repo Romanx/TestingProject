@@ -1,8 +1,11 @@
+import net.java.quickcheck.generator.support.IntegerGenerator;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import uk.co.diggydiggyhole.testingproject.Main;
+import static net.java.quickcheck.generator.CombinedGeneratorsIterables.someIntArrays;
+
 
 /**
  * Created by Alex on 01/05/2014.
@@ -28,6 +31,13 @@ public class MainTest {
         Assert.assertEquals(Main.findMean(new int[] {1, 2, 3, 4, 5 }), 3.0f, 0.01f);
         Assert.assertEquals(Main.findMean(new int[] {100, 3, 30, 92, 76 }), 60.2f, 0.01f);
         Assert.assertEquals(Main.findMean(new int[] {-1, 123, 99 }), 73.66f, 0.01f);
+    }
+
+    @Test
+    public void findMeanAlegbraicTest() {
+        for(int[] integers : someIntArrays(new IntegerGenerator(0, 50))) {
+            Assert.assertNotNull(Main.findMean(integers));
+        }
     }
 
 }

@@ -7,5 +7,6 @@ public enum TriangleType {
     EQUALATERAL,
     ISOSCELES,
     SCALENE,
+    IMPOSSIBLE,
     NOT_A_TRIANGLE
 }
