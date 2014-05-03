@@ -7,6 +7,7 @@
     <groupId>uk.co.diggydiggyhole.testingproject</groupId>
     <artifactId>testingproject</artifactId>
     <version>0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -127,8 +128,18 @@
                     <targetVendor>test</targetVendor>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>uk.co.diggydiggyhole.testingproject.Main</mainClass>
+                            <packageName>uk.co.diggydiggyhole.testingproject</packageName>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
-
 </project>
