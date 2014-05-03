@@ -1,0 +1,7 @@
+Package: [[name]]
+Version: [[version]]
+Section: misc
+Priority: low
+Architecture: all
+Description: An example project for different test techniques.
+Maintainer: mcauliffe.alex@gmail.com
